@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  //background: black;
+}
+.x,
+.o {
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+  }
+}
+.x {
+  &:before,
+  &:after {
+    width: 2px;
+    background: #4468ff;
+    top: calc(50% - 10px);
+  }
+  &:before {
+    transform: rotate(-45deg);
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
+}
+.o:after {
+  border: 2px solid #ff5e5e;
+  border-radius: 50%;
+}
